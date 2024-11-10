@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZibalClient
 {
-    public class ZibalService
+    public class ZibalClient
     {
         private const string zibalRequestTransactionAddress = "https://gateway.zibal.ir/v1/request";
         private const string zibalVerifyTransactionAddress = "https://gateway.zibal.ir/v1/verify";
@@ -13,7 +13,7 @@ namespace ZibalClient
 
         private readonly HttpClient _httpClient;
 
-        public ZibalService(HttpClient httpClient)
+        public ZibalClient(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -25,7 +25,7 @@ namespace ZibalClient
         /// <param name="isLazy">true for transaction in lazy mode, false for normal method.</param>
         /// <param name="isAdvanced">true for transaction in advanced mode.</param>
         /// <returns>a <see cref="CreateTransactionResponse"/> if in normal mode, and a <see cref="CreateAdvancedTransactionResponse"/> if in Advanced mode.</returns>
-        public async Task<CreateTransactionResponse> RequestTransaction(CreateTransactionRequest transactionInfo, bool isLazy = false, bool isAdvanced = false)
+        public async Task<CreateTransactionResponse> RequestTransactionAsync(CreateTransactionRequest transactionInfo, bool isLazy = false, bool isAdvanced = false)
         {
             string url = isLazy ? zibalLazyRequestTransactionAddress : zibalRequestTransactionAddress;
             HttpRequestMessage request = new(HttpMethod.Post, url)
@@ -49,7 +49,7 @@ namespace ZibalClient
         /// <param name="verifyTransactionRequest">the information needed to verify the request.</param>
         /// <param name="isAdvanced">true for transaction in advanced mode.</param>
         /// <returns>a <see cref="VerifyTransactionResponse"/> object if in normal mode, a <see cref="VerifyAdvancedTransactionResponse"/> if in advanced mode.</returns>
-        public async Task<VerifyTransactionResponse> VerifyTransaction(VerifyTransactionRequest verifyTransactionRequest, bool isAdvanced = false)
+        public async Task<VerifyTransactionResponse> VerifyTransactionAsync(VerifyTransactionRequest verifyTransactionRequest, bool isAdvanced = false)
         {
 
             HttpRequestMessage request = new(HttpMethod.Post, zibalVerifyTransactionAddress)
@@ -75,7 +75,7 @@ namespace ZibalClient
         /// <param name="inquiryTransactionRequest"></param>
         /// <param name="isAdvanced">true for transaction in advanced mode.</param>
         /// <returns>a <see cref="InquiryTransactionRequest"/> if in normal mode, a <see cref="InquiryAdvancedTransactionResponse"/> if in advanced mode.</returns>
-        public async Task<InquiryTransactionResponse> GetTransactionStatus(InquiryTransactionRequest inquiryTransactionRequest, bool isAdvanced = false)
+        public async Task<InquiryTransactionResponse> GetTransactionStatusAsync(InquiryTransactionRequest inquiryTransactionRequest, bool isAdvanced = false)
         {
             HttpRequestMessage request = new(HttpMethod.Post, zibalInquiryTransactionAddress)
             {

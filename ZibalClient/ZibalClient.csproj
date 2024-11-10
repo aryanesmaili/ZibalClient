@@ -4,6 +4,22 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>ZibalClient</Title>
+    <Authors>AryanEsmaili</Authors>
+    <Description>This package is a .NET Implementation of Zibal's Documentation used to communicate with Zibal's api and perform various tasks suchs as creating transactions, verifying them and Checking transaction's status.</Description>
+    <PackageProjectUrl>https://github.com/aryanesmaili/ZibalClient</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/aryanesmaili/ZibalClient</RepositoryUrl>
+    <PackageTags>Zibal;ZibalClient;ZibalNET;ZibalASPNET;</PackageTags>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
