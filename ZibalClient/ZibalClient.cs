@@ -109,6 +109,7 @@ namespace ZibalClient
         /// <summary>
         /// is this transaction a test one?
         /// </summary>
+        [JsonIgnore]
         public bool IsTest { get; set; } = false;
 
         /// <summary>
