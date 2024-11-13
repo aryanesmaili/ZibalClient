@@ -12,6 +12,8 @@ A modern .NET client library for integrating with the Zibal payment gateway. Thi
 - Lazy payment request handling
 - transaction status inquiry
 
+## Disclaimer
+### This is ***Not*** an official package by the Zibal Team. this is my implementation of their documentation made to be used by other developers.
 
 ## Installation
 

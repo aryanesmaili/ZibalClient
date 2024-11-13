@@ -13,6 +13,7 @@
     <RepositoryUrl>https://github.com/aryanesmaili/ZibalClient</RepositoryUrl>
     <PackageTags>Zibal;ZibalClient;ZibalNET;ZibalASPNET;</PackageTags>
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
